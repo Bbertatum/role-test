@@ -24,6 +24,9 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+      
+      - name: Install Hugo stable and lftp
+        run: sudo apt update && sudo apt install -y hugo rsync
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
@@ -33,4 +36,4 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo Add other actions to build,
-          echo test, and deploy your project.
+          echo test, and deploy your project
